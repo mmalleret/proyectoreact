@@ -37,25 +37,28 @@
         </div>
     </nav>
 
-    <!--Detalle de contacto-->
+    <!-- Imagen de fondo -->
     <div class="uk-section-default uk-section-muted">
         <div class="uk-background-cover uk-height-medium uk-panel uk-flex uk-flex-center uk-flex-center" style="background-image: url(Imagenes/op1.jpg)">
-            </div>
+        
+        </div>
     </div>
    
-    
+    <!--Detalle de contacto-->
+
     <div class="uk-card uk-card-default uk-card-large uk-card-body">
-        <div class="uk-card-header">
+        <div class="uk-card uk-card-header">
             <div class="uk-flex-middle" uk-grid>
                 <div class="uk-width-auto">
                     <img class="uk-border-circle" width="200" height="200" src="Imagenes/perfil.jpg">
                 </div>
-                <div class="uk-width-expand">
+                <div class="uk-width-expand uk-card-body">
                     <h3 class="uk-card-title uk-margin-remove-bottom">Name</h3>
                     <p class="uk-text-meta uk-margin-remove-top">Descripción general</p>
                 </div>
             </div>
         </div>
+
             <div class="uk-card uk-card-default uk-card-body">
                 <dl class="uk-description-list uk-description-list-divider">
                     <dt>Calle y número</dt>
@@ -76,7 +79,96 @@
 </div>
 </div>
 
+<!-- Carrusel con sugerencias -->
 
+<div class="uk-slider-container-offset" uk-slider>
+
+    <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
+
+        <ul class="uk-slider-items uk-child-width-1-4@s uk-grid">
+            <li>
+                <div class="uk-child-width-1-1@m" uk-grid>
+                    <div>
+                        <div class="uk-card uk-card-default">
+                            <div class="uk-card-media-top">
+                                <img src="Imagenes/perfil.jpg" alt="">
+                            </div>
+                            <div class="uk-card-body">
+                                <h3 class="uk-card-title">Nombre Contacto</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="uk-child-width-1-1@m" uk-grid>
+                    <div>
+                        <div class="uk-card uk-card-default">
+                            <div class="uk-card-media-top">
+                                <img src="Imagenes/perfil.jpg" alt="">
+                            </div>
+                            <div class="uk-card-body">
+                                <h3 class="uk-card-title">Nombre Contacto</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="uk-child-width-1-1@m" uk-grid>
+                    <div>
+                        <div class="uk-card uk-card-default">
+                            <div class="uk-card-media-top">
+                                <img src="Imagenes/perfil.jpg" alt="">
+                            </div>
+                            <div class="uk-card-body">
+                                <h3 class="uk-card-title">Nombre Contacto</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="uk-child-width-1-1@m" uk-grid>
+                    <div>
+                        <div class="uk-card uk-card-default">
+                            <div class="uk-card-media-top">
+                                <img src="Imagenes/perfil.jpg" alt="">
+                            </div>
+                            <div class="uk-card-body">
+                                <h3 class="uk-card-title">Nombre Contacto</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="uk-child-width-1-1@m" uk-grid>
+                    <div>
+                        <div class="uk-card uk-card-default">
+                            <div class="uk-card-media-top">
+                                <img src="Imagenes/perfil.jpg" alt="">
+                            </div>
+                            <div class="uk-card-body">
+                                <h3 class="uk-card-title">Nombre Contacto</h3>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+
+        <!--carrusel <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>-->
+        <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+    
+    </div>
+</div>
  
 </body>
 </html>
