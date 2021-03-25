@@ -1,17 +1,17 @@
-function Navbar() {
+function Navbar(props) {
     return(
         <li>
             <div className="uk-child-width-1-1@m" uk-grid>
                 <div>
                     <div className="uk-card uk-card-default">
                         <div className="uk-card-media-top">
-                            <img src={"Imagenes/perfil.jpg"} alt=""/>
+                            <img src={props.image} alt=""/>
                         </div>
                         <div className="uk-card-body">
-                            <h3 className="uk-card-title">Nombre Apellido, Edad</h3>
+                            <h3 className="uk-card-title">{props.fullname + " (" + props.edad + ")"}</h3>
                             <ul>
-                                <li>Mail</li>
-                                <li>Fecha de nacimiento</li>
+                                <li>{props.mail}</li>
+                                <li>{props.fecha}</li>
                             </ul>
                         </div>
                     </div>

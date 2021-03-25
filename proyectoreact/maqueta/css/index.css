@@ -1,0 +1,26 @@
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+/* .uk-child-width-1-4\@s>* {
+    width: 24.8%;
+  }
+.carrusel {
+  margin: 0px;
+  padding: 11px 25px 39px 25px;;
+} */
+  main {
+    flex: 1 0 auto;
+  }
+  footer{
+      background-color: rgb(253, 242, 228);
+      height: fit-content;
+      list-style-type: none;
+      padding-top: 1%;
+      padding-bottom: 1%;
+      
+  }
+  ul {
+    list-style-type: none;
+  }
