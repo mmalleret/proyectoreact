@@ -1,5 +1,6 @@
 import Carrusel from './components/Carrusel';
 import Navbar from './components/Navbar';
+import Imagen from './components/Imagen'
 
 function App() {
   return (
@@ -11,7 +12,10 @@ function App() {
           <Navbar/>
         </div>
       </nav>
-
+    {/* Imagen */}
+    <div class="uk-section-default"> 
+      <Imagen/>
+    </div>
     {/* Carrusel */}
     <div className="uk-slider-container-offset" uk-slider>
         <Carrusel/>
