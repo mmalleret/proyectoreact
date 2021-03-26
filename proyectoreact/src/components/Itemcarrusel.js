@@ -1,4 +1,4 @@
-function Navbar(props) {
+function ItemCarrusel(props) {
     return(
         <li>
             <div className="uk-child-width-1-1@m" uk-grid>
@@ -20,4 +20,4 @@ function Navbar(props) {
         </li>
         );
 }
-export default Navbar;
+export default ItemCarrusel;
