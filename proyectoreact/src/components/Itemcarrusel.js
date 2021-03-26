@@ -1,7 +1,7 @@
 function ItemCarrusel(props) {
     return(
         <li>
-            <div className="uk-child-width-1-1@m" uk-grid>
+            <div className="uk-child-width-1-1@m" uk-grid="true" >
                 <div>
                     <div className="uk-card uk-card-default">
                         <div className="uk-card-media-top">
