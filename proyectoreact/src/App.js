@@ -6,14 +6,14 @@ function App() {
   <div id="wrapper">
 
     {/* Navbar */}
-      <nav className="uk-navbar-container" uk-navbar>
+      <nav className="uk-navbar-container" uk-navbar="true" >
         <div className="uk-navbar-left">
           <Navbar/>
         </div>
       </nav>
 
     {/* Carrusel */}
-    <div className="uk-slider-container-offset" uk-slider>
+    <div className="uk-slider-container-offset" uk-slider="true" >
         <Carrusel/>
     </div>
 
