@@ -6,22 +6,30 @@ function App() {
   return (
   <div id="wrapper">
 
-    {/* Navbar */}
+    
+
+    {/* Imagen */}
+    
+      <div className="uk-section-default"> 
+        <Imagen/>
+      </div>
+
+      {/* Navbar */}
+
       <nav className="uk-navbar-container" uk-navbar="true" >
         <div className="uk-navbar-left">
           <Navbar/>
         </div>
       </nav>
-    {/* Imagen */}
-    <div class="uk-section-default"> 
-      <Imagen/>
-    </div>
+    
     {/* Carrusel */}
-    <div className="uk-slider-container-offset" uk-slider="true" >
+    
+     <div className="uk-slider-container-offset" uk-slider="true" >
         <Carrusel/>
-    </div>
+     </div>
   
      {/* Footer */}
+    
     <br/>
     <footer className="page-footer">
         <div className="container">
