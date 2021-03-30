@@ -4,7 +4,7 @@ function Carrusel() {
     return(
 
             <div className="uk-position-relative uk-visible-toggle uk-light" tabIndex="-1">
-            <ul className="uk-slider-items uk-child-width-1-4@s" uk-grid="true" >
+            <ul className={"uk-slider-items uk-child-width-1-4@s"} uk-grid="true">
                 <Itemcarrusel image="imagenes/perfil.jpg" fullname="Nombre Apellido" edad="edad" mail="Email" fecha="Fecha de nacimiento"/>
                 <Itemcarrusel image="imagenes/perfil.jpg" fullname="Nombre Apellido" edad="edad" mail="Email" fecha="Fecha de nacimiento"/>
                 <Itemcarrusel image="imagenes/perfil.jpg" fullname="Nombre Apellido" edad="edad" mail="Email" fecha="Fecha de nacimiento"/>
