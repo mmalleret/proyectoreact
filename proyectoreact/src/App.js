@@ -34,10 +34,10 @@ function App() {
     <footer className="page-footer">
         <div className="container">
             <div className="uk-flex-middle" uk-grid="true" >
-                <div className="uk-width-2-3@m">
+                <div className={"uk-width-2-3@m"}>
                     <p></p>
                 </div>
-                <div className="uk-width-1-3@m uk-flex-first">
+                <div className={"uk-width-1-3@m uk-flex-first"}>
                   <h5>Contactate con Nosotras</h5>
                 <ul className="icons uk-column-1-2 uk-column-divider">
                     <li><span><i className="fab fa-facebook"> ConnectIN</i></span></li>
