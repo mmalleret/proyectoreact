@@ -1,4 +1,4 @@
-import Carrusel from './components/Carrusel';
+import Container from './components/Container'
 import Navbar from './components/Navbar';
 import Imagen from './components/Imagen'
 
@@ -22,12 +22,9 @@ function App() {
         </div>
       </nav>
     
-    {/* Carrusel */}
-    
-     <div className="uk-slider-container-offset" uk-slider="true" >
-        <Tarjetas/>
-     </div>
+      <Container/>
   
+
      {/* Footer */}
     
     <br/>

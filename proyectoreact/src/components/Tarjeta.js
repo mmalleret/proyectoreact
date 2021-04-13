@@ -1,12 +1,11 @@
 import React, {Component} from 'react';
 
-class Itemtarjeta extends Component {
+class Tarjeta extends Component {
 
     constructor(props){
         super(props);
         this.state = {
             colorfondo: props.color,
-            datos: props.datos,
         }
     }
 
@@ -15,7 +14,6 @@ class Itemtarjeta extends Component {
             this.setState({
                 colorfondo: color,
             })
-            console.log("Cambiamos el color de fondo" + color);
         } else {
             this.setState({
                 colorfondo: '#AFB8FB'
@@ -46,4 +44,4 @@ class Itemtarjeta extends Component {
         )
     }
 }
-export default Itemtarjeta;
+export default Tarjeta;
