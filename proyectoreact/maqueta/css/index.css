@@ -24,3 +24,19 @@ body {
   ul {
     list-style-type: none;
   }
+  .fcontainer {
+    padding: 15px 30px;
+    border-bottom: 1px solid #dadce0;
+    font-size: 15px;
+    color: rgba(0, 0, 0,54);
+    text-align: center;
+}
+
+.reset {
+    padding: 15px 30px;
+    font-size: 15px;
+    color: rgba(0, 0, 0,54);
+    text-align: center;
+}
+
+

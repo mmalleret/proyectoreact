@@ -25,7 +25,7 @@ function App() {
     {/* Carrusel */}
     
      <div className="uk-slider-container-offset" uk-slider="true" >
-        <Carrusel/>
+        <Tarjetas/>
      </div>
   
      {/* Footer */}
