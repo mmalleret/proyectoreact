@@ -22,7 +22,7 @@ class Tarjetas extends Component {
 
     borrar = (cardId) => {
         let resultado = this.state.contactos.filter((dato) =>{
-            console.log(dato.id, cardId, dato.id !== cardId)
+            console.log(contactos.login.uuid, cardId, contactos.login.uuid !== cardId)
              return dato.id !== cardId
          })
          this.setState({contactos: resultado})
@@ -44,7 +44,20 @@ class Tarjetas extends Component {
                 <div className="uk-grid-column-small uk-grid-row-large uk-child-width-1-3@s uk-text-center container" uk-grid="true"> 
                 {this.state.contactos.map( (item) => {
                         return (
-                            <Tarjeta nombre={item.name.first} apellido={item.name.last} id={item.login.uuid} foto={item.picture.large} edad={item.dob.age} mail={item.email} fecha={item.dob.date} color="white" key={item.login.uuid} onDelete={this.borrar.bind(this)} />
+                            <Tarjeta 
+                            nombre={item.name.first} 
+                            apellido={item.name.last} 
+                            id={item.login.uuid} 
+                            foto={item.picture.large} 
+                            edad={item.dob.age} 
+                            mail={item.email} 
+                            fecha={item.dob.date} 
+                            color="white" 
+                            key={item.login.uuid} 
+                            onDelete={this.borrar.bind(this)}
+                            direccion={item.location} 
+                            registro={item.registered.date}
+                            telefono={item.cell}/>
                         )
                     })
                 }

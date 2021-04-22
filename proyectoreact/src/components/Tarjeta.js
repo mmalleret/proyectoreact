@@ -6,7 +6,7 @@ class Tarjeta extends Component {
         super(props);
         this.state = {
             colorfondo: props.color,
-            display: "display: none"
+            display: "none"
         }
     }
 
@@ -22,11 +22,16 @@ class Tarjeta extends Component {
         }
     }
 
-    cambiarClase = (clase) => {
+    cambiarClase = () => {
+        if (this.state.display === 'block' ) {
         this.setState({
-            display: 'display: block'
+            display: 'none',
         })
-    }
+        } else {
+        this.setState({
+            display: 'block'
+        })
+    }}
 
     render() {
         return(
@@ -46,7 +51,13 @@ class Tarjeta extends Component {
                         <li onClick = {this.props.onDelete.bind(this, this.props.id)}> <button className="uk-button uk-button-default">Borrar</button> </li>
                         <li onClick = { () => this.cambiarClase("block")}> <button className="uk-button uk-button-default">Detalle</button> </li>
                     </ul>
-                    <div style={this.display}> </div>
+                    <div style={{display: this.state.display}}> 
+                        <ul className="uk-list">
+                            <li>{this.props.direccion.street.name} {this.props.direccion.street.number}</li>
+                            <li>{this.props.direccion.state}/{this.props.direccion.country}</li>
+                            <li>{this.props.mail}</li>
+                        </ul>
+                    </div>
                     
                 </div>
             </div>
