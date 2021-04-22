@@ -1,15 +1,24 @@
-import Tarjeta from './Tarjeta';
 import React, {Component} from 'react';
-//import contactos from appi
+import Tarjeta from './Tarjeta';
+
 
 class Tarjetas extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            contactos: datos,
+            contactos: [],
+            contactosOriginales: [],
         }
     }
+
+    componentDidMount(){
+        fetch("https://randomuser.me/api/?results=40")
+        .then(result => result.json())
+        .then( data => { 
+            this.setState({contactos: data.results, contactosOriginales: data.results})
+        })    
+    }   
 
     borrar = (cardId) => {
         let resultado = this.state.contactos.filter((dato) =>{
@@ -21,29 +30,27 @@ class Tarjetas extends Component {
 
     reset = () => {
         this.setState({
-            contactos: datos,
+            contactos: this.state.contactosOriginales,
         })
     }
 
-    render() {
+    render () {
         return(
             <div>
                 <div className="reset">
                    <button className="uk-button uk-button-default"
                     onClick= {this.reset.bind(this)}>Reset</button>
                 </div>
-                <div className="uk-grid-column-small uk-grid-row-large uk-child-width-1-3@s uk-text-center container" uk-grid="true"> {
-                    this.state.contactos.map((item) => {
+                <div className="uk-grid-column-small uk-grid-row-large uk-child-width-1-3@s uk-text-center container" uk-grid="true"> 
+                {this.state.contactos.map( (item) => {
                         return (
-                            < Tarjeta name={item.name} id={item.id} edad={item.edad} mail={item.mail} fecha={item.fecha}  image={item.image} color="white" key={item.id} onDelete={this.borrar.bind(this)} />
+                            <Tarjeta nombre={item.name.first} apellido={item.name.last} id={item.login.uuid} foto={item.picture.large} edad={item.dob.age} mail={item.email} fecha={item.dob.date} color="white" key={item.login.uuid} onDelete={this.borrar.bind(this)} />
                         )
                     })
                 }
                 </div>
             </div>
-        )
-    }
-
+        )}
 }
 
 export default Tarjetas;

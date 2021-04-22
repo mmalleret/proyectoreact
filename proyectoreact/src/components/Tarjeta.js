@@ -6,6 +6,7 @@ class Tarjeta extends Component {
         super(props);
         this.state = {
             colorfondo: props.color,
+            display: "display: none"
         }
     }
 
@@ -21,6 +22,12 @@ class Tarjeta extends Component {
         }
     }
 
+    cambiarClase = (clase) => {
+        this.setState({
+            display: 'display: block'
+        })
+    }
+
     render() {
         return(
             <div className="uk-card uk-card-default uk-card-body" style={{backgroundColor: this.state.colorfondo}}
@@ -28,17 +35,19 @@ class Tarjeta extends Component {
             onMouseLeave = { () => this.cambiarColor("white")}
             >
                 <div className="uk-card-media-top">
-                    <img src={this.props.image} alt=""/>
+                    <img src={this.props.foto} alt=""/>
                 </div>
                 <div className="uk-card-body">
                     <ul className="uk-list">
-                        <li>{this.props.name}</li>
-                        <li>{this.props.edad}</li>
+                        <li>{this.props.nombre} {this.props.apellido}</li>
+                        <li>{this.props.fecha} ({this.props.edad})</li>
                         <li>{this.props.mail}</li>
-                        <li>{this.props.fecha}</li>
                         <li onClick = { () => this.cambiarColor("#AFB8FB")}> <button className="uk-button uk-button-default" >Cambiar color</button> </li>
                         <li onClick = {this.props.onDelete.bind(this, this.props.id)}> <button className="uk-button uk-button-default">Borrar</button> </li>
+                        <li onClick = { () => this.cambiarClase("block")}> <button className="uk-button uk-button-default">Detalle</button> </li>
                     </ul>
+                    <div style={this.display}> </div>
+                    
                 </div>
             </div>
         )
