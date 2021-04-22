@@ -22,10 +22,12 @@ class Tarjetas extends Component {
 
     borrar = (cardId) => {
         let resultado = this.state.contactos.filter((dato) =>{
-            console.log(contactos.login.uuid, cardId, contactos.login.uuid !== cardId)
-             return dato.id !== cardId
+            console.log(dato.login.uuid)
+             return dato.login.uuid !== cardId;
          })
-         this.setState({contactos: resultado})
+         this.setState({
+            contactos: resultado
+        })
     }
 
     reset = () => {
