@@ -13,7 +13,7 @@ class Tarjetas extends Component {
     }
 
     componentDidMount(){
-        fetch("https://randomuser.me/api/?results=40")
+        fetch("https://randomuser.me/api/?results=2")
         .then(result => result.json())
         .then( data => { 
             this.setState({contactos: data.results, contactosOriginales: data.results})
@@ -36,14 +36,39 @@ class Tarjetas extends Component {
         })
     }
 
+    agregar = () => {
+        let valor = document.querySelector(".inputAdd").value 
+        console.log(valor)
+        fetch ("https://randomuser.me/api/?results=" + valor)
+        .then(resultado => resultado.json())
+        .then(datos => {
+            datos.results.map((dato) => {
+            this.state.contactos.push(dato)})
+            this.setState({contactos: this.state.contactos})
+        })
+    }
+
+    filtroNombre = () => {
+
+    }
+
     render () {
         return(
             <div>
+                {/* boton de reset */}
                 <div className="reset">
                    <button className="uk-button uk-button-default"
                     onClick= {this.reset.bind(this)}>Reset</button>
                 </div>
-                <div className="uk-grid-column-small uk-grid-row-large uk-child-width-1-3@s uk-text-center container" uk-grid="true"> 
+                
+                {/* adicionar tarjetas */}
+                <div className="uk-margin"> 
+                        <div> Deseas agregar</div>
+                        <input className="inputAdd" type="number" ></input>
+                        <button onClick={this.agregar.bind(this)}>Agregar</button>
+                </div> 
+
+                <div className="" uk-grid="true"> 
                 {this.state.contactos.map( (item) => {
                         return (
                             <Tarjeta 
@@ -59,7 +84,9 @@ class Tarjetas extends Component {
                             onDelete={this.borrar.bind(this)}
                             direccion={item.location} 
                             registro={item.registered.date}
-                            telefono={item.cell}/>
+                            telefono={item.cell}
+                            />
+
                         )
                     })
                 }
