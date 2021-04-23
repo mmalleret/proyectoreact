@@ -48,7 +48,7 @@ class Tarjeta extends Component {
                         <li>{this.props.fecha} ({this.props.edad})</li>
                         <li>{this.props.mail}</li>
                         <li onClick = { () => this.cambiarColor("#AFB8FB")}> <button className="uk-button uk-button-default" >Cambiar color</button> </li>
-                        <li onClick = {this.props.onDelete.bind(this, this.props.id)}> <button className="uk-button uk-button-default">Borrar</button> </li>
+                        <li onClick = {this.props.onDelete.bind(this, this.props.id)}> <button className="uk-button uk-button-default">X</button> </li>
                         <li onClick = { () => this.cambiarClase("block")}> <button className="uk-button uk-button-default">Detalle</button> </li>
                     </ul>
                     <div style={{display: this.state.display}}> 
