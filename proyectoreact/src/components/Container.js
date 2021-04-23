@@ -48,7 +48,18 @@ class Tarjetas extends Component {
         })
     }
 
-    filtroNombre = () => {
+    submit = () => {
+        let nombre = document.querySelector(".inputNombre").value
+        //let apellido = document.querySelector(".inputApellido").value
+        //let edad = document.querySelector(".inputEdad").value
+        
+        let resultado = this.state.contactos.filter((dato) =>{
+            console.log(dato.name.first)
+             return dato.name.first === nombre;
+         })
+         this.setState({
+            contactos: resultado
+        })
 
     }
 
@@ -67,6 +78,15 @@ class Tarjetas extends Component {
                         <input className="inputAdd" type="number" ></input>
                         <button onClick={this.agregar.bind(this)}>Agregar</button>
                 </div> 
+
+                {/* filtros */}
+                <div className="uk-margin"> 
+                        <div> Deseas Filtrar</div>
+                        Nombre: <input className="inputNombre" type="text" ></input>
+                        Apellido: <input className="inputApellido" type="text" ></input>
+                        Edad: <input className="inputEdad" type="text" ></input>
+                        <button onClick={this.submit.bind(this)}>Filtrar</button>
+                </div>
 
                 <div className="" uk-grid="true"> 
                 {this.state.contactos.map( (item) => {
