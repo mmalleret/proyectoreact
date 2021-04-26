@@ -6,7 +6,7 @@ class Tarjeta extends Component {
         super(props);
         this.state = {
             colorfondo: props.color,
-            icon: "plus-circle",
+            icon: "icon: plus-circle",
             display: "none"
         }
     }
@@ -35,13 +35,13 @@ class Tarjeta extends Component {
     }}
 
     cambiarIcono = () => {
-        if(this.state.icon === 'minus-circle') {
+        if(this.state.icon === 'icon: minus-circle') {
             this.setState({
-                icon: 'plus-circle',
+                icon: 'icon: plus-circle',
             })
         } else {
             this.setState({
-                icon: 'minus-circle'
+                icon: 'icon: minus-circle'
             })
         }
     }
@@ -65,15 +65,16 @@ class Tarjeta extends Component {
                                 <li><a uk-icon="icon: arrow-left"></a></li>
                                 <li onClick = { () => this.cambiarColor("#AFB8FB")}> <a uk-icon="icon: heart" ></a> </li>
                                 <li onClick = {this.props.onDelete.bind(this, this.props.id)}> <a uk-icon="icon: trash"></a> </li>
-                                <li onClick = { () => this.cambiarClase("block")}> <a onClick= {() => this.cambiarIcono("minus-circle")} uk-icon="icon: plus-circle"></a> </li>
+                                <li onClick = { () => this.cambiarClase("block")}> <a onClick= {() => this.cambiarIcono("icon: minus-circle")} uk-icon={this.state.icon}></a> </li>
                                 <li><a uk-icon="icon: arrow-right"></a></li>
                             </ul>
                         </ul>
 
-                    <div style={{display: this.state.display}} icon={{icon: this.state.icon}}> 
+                    <div style={{display: this.state.display}}> 
                         <ul className="uk-list">
                             <li>{this.props.direccion.street.name} {this.props.direccion.street.number}</li>
-                            <li>{this.props.direccion.state}/{this.props.direccion.country}</li>
+                            <li>{this.props.direccion.city}, {this.props.direccion.state}, {this.props.direccion.country}</li>
+                            <li>{this.props.registro}</li>
                             <li>{this.props.telefono}</li>
                         </ul>
                     </div>
