@@ -30,6 +30,11 @@ class Tarjetas extends Component {
         })
     }
 
+    // mover = (posicion) => {
+
+
+    // }
+
     reset = () => {
         this.setState({
             contactos: this.state.contactosOriginales,
@@ -108,6 +113,7 @@ class Tarjetas extends Component {
                             color="white" 
                             key={item.login.uuid} 
                             onDelete={this.borrar.bind(this)}
+                            // onChange={this.posicion.bind(this)}
                             direccion={item.location} 
                             registro={item.registered.date}
                             telefono={item.cell}
