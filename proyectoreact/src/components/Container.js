@@ -13,7 +13,7 @@ class Tarjetas extends Component {
     }
 
     componentDidMount(){
-        fetch("https://randomuser.me/api/?results=2")
+        fetch("https://randomuser.me/api/?results=12")
         .then(result => result.json())
         .then( data => { 
             this.setState({contactos: data.results, contactosOriginales: data.results})
@@ -65,30 +65,36 @@ class Tarjetas extends Component {
 
     render () {
         return(
-            <div>
-                {/* boton de reset */}
-                <div className="reset">
-                   <button className="uk-button uk-button-default"
-                    onClick= {this.reset.bind(this)}>Reset</button>
-                </div>
-                
-                {/* adicionar tarjetas */}
-                <div className="uk-margin"> 
-                        <div> Deseas agregar</div>
-                        <input className="inputAdd" type="number" ></input>
-                        <button onClick={this.agregar.bind(this)}>Agregar</button>
-                </div> 
+            <div className="container">
+                <ul class="uk-iconnav eventos-container">
 
-                {/* filtros */}
-                <div className="uk-margin"> 
-                        <div> Deseas Filtrar</div>
-                        Nombre: <input className="inputNombre" type="text" ></input>
-                        Apellido: <input className="inputApellido" type="text" ></input>
-                        Edad: <input className="inputEdad" type="text" ></input>
-                        <button onClick={this.submit.bind(this)}>Filtrar</button>
-                </div>
+                    {/* adicionar tarjetas */}
+                    <li>
+                        <div className="uk-margin"> 
+                                <input className="inputAdd" type="number" ></input>
+                                <button className="uk-button uk-button-default uk-button-small" onClick={this.agregar.bind(this)}>Agregar</button>
+                        </div> 
+                    </li>
 
-                <div className="" uk-grid="true"> 
+                    {/* filtros */}
+                    <li>
+                        <div className="uk-margin"> 
+                                <input className="inputNombre" type="text" placeholder="Nombre"></input>
+                                <input className="inputApellido" type="text" placeholder="Apellido"></input>
+                                <input className="inputEdad" type="text" placeholder="Edad"></input>
+                                <button className="uk-button uk-button-default uk-button-small" onClick={this.submit.bind(this)}>Filtrar</button>
+                        </div>
+                    </li>
+
+                    {/* boton de reset */}
+                    <li>
+                        <div className="reset uk-margin">
+                            <button className="uk-button uk-button-default uk-button-small"><a href="" uk-icon="icon: refresh" onClick= {this.reset.bind(this)}></a></button>
+                        </div>
+                    </li>
+                </ul>
+
+                <div className="uk-grid-column-small uk-grid-row-large uk-child-width-1-3@s uk-text-center container" uk-grid="true"> 
                 {this.state.contactos.map( (item) => {
                         return (
                             <Tarjeta 

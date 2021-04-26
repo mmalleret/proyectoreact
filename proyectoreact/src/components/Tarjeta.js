@@ -6,6 +6,7 @@ class Tarjeta extends Component {
         super(props);
         this.state = {
             colorfondo: props.color,
+            icon: "plus-circle",
             display: "none"
         }
     }
@@ -33,29 +34,45 @@ class Tarjeta extends Component {
         })
     }}
 
+    cambiarIcono = () => {
+        if(this.state.icon === 'minus-circle') {
+            this.setState({
+                icon: 'plus-circle',
+            })
+        } else {
+            this.setState({
+                icon: 'minus-circle'
+            })
+        }
+    }
+
     render() {
         return(
             <div className="uk-card uk-card-default uk-card-body" style={{backgroundColor: this.state.colorfondo}}
             onMouseEnter = { () => this.cambiarColor("#DED1E1")}
             onMouseLeave = { () => this.cambiarColor("white")}
             >
-                <div className="uk-card-media-top">
-                    <img src={this.props.foto} alt=""/>
-                </div>
+
                 <div className="uk-card-body">
-                    <ul className="uk-list">
-                        <li>{this.props.nombre} {this.props.apellido}</li>
-                        <li>{this.props.fecha} ({this.props.edad})</li>
-                        <li>{this.props.mail}</li>
-                        <li onClick = { () => this.cambiarColor("#AFB8FB")}> <button className="uk-button uk-button-default" >Cambiar color</button> </li>
-                        <li onClick = {this.props.onDelete.bind(this, this.props.id)}> <button className="uk-button uk-button-default">X</button> </li>
-                        <li onClick = { () => this.cambiarClase("block")}> <button className="uk-button uk-button-default">Detalle</button> </li>
-                    </ul>
-                    <div style={{display: this.state.display}}> 
+                        <ul className="uk-list uk-iconnav uk-iconnav-vertical">
+                            <div className="uk-card-media-top">
+                                <img src={this.props.foto} alt=""/>
+                            </div>
+                            <li>{this.props.nombre} {this.props.apellido}</li>
+                            <li>{this.props.fecha} ({this.props.edad})</li>
+                            <li>{this.props.mail}</li>
+                            <ul className="uk-iconnav iconos-tarjeta">
+                                <li onClick = { () => this.cambiarColor("#AFB8FB")}> <a uk-icon="icon: heart" ></a> </li>
+                                <li onClick = {this.props.onDelete.bind(this, this.props.id)}> <a uk-icon="icon: trash"></a> </li>
+                                <li onClick = { () => this.cambiarClase("block")}> <a onClick= {() => this.cambiarIcono("minus-circle")} uk-icon="icon: plus-circle"></a> </li>
+                            </ul>
+                        </ul>
+
+                    <div style={{display: this.state.display}} icon={{icon: this.state.icon}}> 
                         <ul className="uk-list">
                             <li>{this.props.direccion.street.name} {this.props.direccion.street.number}</li>
                             <li>{this.props.direccion.state}/{this.props.direccion.country}</li>
-                            <li>{this.props.mail}</li>
+                            <li>{this.props.telefono}</li>
                         </ul>
                     </div>
                     
