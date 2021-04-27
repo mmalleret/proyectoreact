@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import Tarjeta from './Tarjeta';
 
-
 class Tarjetas extends Component {
 
     constructor(props) {
@@ -12,6 +11,7 @@ class Tarjetas extends Component {
 
         }
     }
+
 
     componentDidMount(){
         fetch("https://randomuser.me/api/?results=12")
@@ -131,6 +131,7 @@ class Tarjetas extends Component {
                 <div className="uk-grid-column-small uk-grid-row-large uk-child-width-1-3@s uk-text-center container" uk-grid="true" > 
                 {this.state.contactos.map( (item) => {
                         return (
+                            
                             <Tarjeta 
                             nombre={item.name.first} 
                             apellido={item.name.last} 

@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import DatePicker from 'react-datepicker'
+import 'react-datepicker/dist/react-datepicker.css'
 
 class Tarjeta extends Component {
 
@@ -7,7 +9,8 @@ class Tarjeta extends Component {
         this.state = {
             colorfondo: props.color,
             icon: "icon: plus-circle",
-            display: "none"
+            display: "none",
+            selectedDate: new Date(props.fecha)
         }
     }
 
@@ -46,6 +49,12 @@ class Tarjeta extends Component {
         }
     }
 
+    setSelectedDate = (date) => {
+        this.setState({
+            selectedDate: date
+        })
+    }
+
     render() {
         return(
             <div className="uk-card uk-card-default uk-card-body" style={{backgroundColor: this.state.colorfondo}}
@@ -58,9 +67,11 @@ class Tarjeta extends Component {
                             <div className="uk-card-media-top">
                                 <img src={this.props.foto} alt=""/>
                             </div>
-                            <li>{this.props.nombre} {this.props.apellido}</li>
-                            <li>{this.props.fecha} ({this.props.edad})</li>
+                            <li>{this.props.nombre} {this.props.apellido} ({this.props.edad})</li>
                             <li>{this.props.mail}</li>
+                            <li>
+                                < DatePicker selected={this.state.selectedDate} onChange={ this.setSelectedDate } dateFormat='dd/MM/yyyy' filterDate={date => date.getDate()} showYearDropdown showFullMonthYearPicker/> 
+                            </li>
                             <ul className="uk-iconnav iconos-tarjeta">
                                 <li onClick = {this.props.onChange.bind(this, this.props.id)}><a uk-icon="icon: arrow-left"></a></li>
                                 <li onClick = { () => this.cambiarColor("#AFB8FB")}> <a uk-icon="icon: heart" ></a> </li>
