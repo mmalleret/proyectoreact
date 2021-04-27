@@ -74,11 +74,11 @@ class Tarjeta extends Component {
                                 < DatePicker selected={this.state.selectedDate} onChange={ this.setSelectedDate } dateFormat='dd/MM/yyyy' filterDate={date => date.getDate()} showYearDropdown showFullMonthYearPicker style={{backgroundColor:"red"}}/> 
                             </li>
                             <ul className="uk-iconnav iconos-tarjeta">
-                                <li onClick = {this.props.onChange.bind(this, this.props.id)}><a uk-icon="icon: arrow-left"></a></li>
+                                <li onClick = {this.props.onChangeLeft.bind(this, this.props.id)}><a uk-icon="icon: arrow-left"></a></li>
                                 <li onClick = { () => this.cambiarColor("#AFB8FB")}> <a uk-icon="icon: heart" ></a> </li>
                                 <li onClick = {this.props.onDelete.bind(this, this.props.id)}> <a uk-icon="icon: trash"></a> </li>
                                 <li onClick = { () => this.cambiarClase("block")}> <a onClick= {() => this.cambiarIcono("icon: minus-circle")} uk-icon={this.state.icon}></a> </li>
-                                <li><a uk-icon="icon: arrow-right"></a></li>
+                                <li onClick = {this.props.onChangeRight.bind(this, this.props.id)}><a uk-icon="icon: arrow-right"></a></li>
                             </ul>
                         </ul>
 

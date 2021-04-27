@@ -32,12 +32,32 @@ class Tarjetas extends Component {
         })
     }
 
-    mover = (posicion) => {
+    moverLeft = (posicion) => {
         let lugar = this.state.contactos.findIndex((objeto) => {
             return objeto.login.uuid === posicion; 
         })
         
-        let eliminar  = this.state.contactos.splice(lugar, 1) 
+        let eliminar  = this.state.contactos.splice(lugar, 1)[0] 
+        
+        console.log(eliminar)
+
+        let nuevoLugar = lugar-1
+        
+        let agregar = this.state.contactos.splice(nuevoLugar, 0, eliminar)
+        
+        this.setState({
+            contactos: this.state.contactos
+        })
+
+        
+    }
+
+    moverRight = (posicion) => {
+        let lugar = this.state.contactos.findIndex((objeto) => {
+            return objeto.login.uuid === posicion; 
+        })
+        
+        let eliminar  = this.state.contactos.splice(lugar, 1)[0] 
         
         console.log(eliminar)
 
@@ -155,7 +175,8 @@ class Tarjetas extends Component {
                             color="white" 
                             key={item.login.uuid} 
                             onDelete={this.borrar.bind(this)}
-                            onChange={this.mover.bind(this)}
+                            onChangeLeft={this.moverLeft.bind(this)}
+                            onChangeRight={this.moverRight.bind(this)}
                             direccion={item.location} 
                             registro={item.registered.date}
                             telefono={item.cell}
