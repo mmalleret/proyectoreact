@@ -10,8 +10,7 @@ class Tarjeta extends Component {
             colorfondo: props.color,
             icon: "icon: plus-circle",
             display: "none",
-            selectedDate: new Date()
-
+            selectedDate: new Date(props.fecha)
         }
     }
 
@@ -69,15 +68,10 @@ class Tarjeta extends Component {
                                 <img src={this.props.foto} alt=""/>
                             </div>
                             <li>{this.props.nombre} {this.props.apellido} ({this.props.edad})</li>
-                            
-                            <li className="uk-card-media-top Calendar" style={{backgroundColor: this.state.colorfondo}}
-                            onMouseEnter = { () => this.cambiarColor("#DED1E1")}
-                            onMouseLeave = { () => this.cambiarColor("white")}>
+                            <li>{this.props.mail}</li>
+                            <li>
                                 < DatePicker selected={this.state.selectedDate} onChange={ this.setSelectedDate } dateFormat='dd/MM/yyyy' filterDate={date => date.getDate()} showYearDropdown showFullMonthYearPicker/> 
                             </li>
-
-                            <li>{this.props.fecha}</li>
-                            <li>{this.props.mail}</li>
                             <ul className="uk-iconnav iconos-tarjeta">
                                 <li><a uk-icon="icon: arrow-left"></a></li>
                                 <li onClick = { () => this.cambiarColor("#AFB8FB")}> <a uk-icon="icon: heart" ></a> </li>
