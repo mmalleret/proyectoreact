@@ -77,11 +77,9 @@ class Tarjetas extends Component {
     }
 
     submit2 = () =>{
-        let apellido = document.querySelector(".inputApellido").value
-
         let resultado2 = this.state.contactos.filter((dato) =>{
             console.log(dato.name.last)
-            return dato.name.last === apellido;
+            return dato.name.last === this.state.apellido;
         })
         this.setState({
             contactos: resultado2
@@ -89,11 +87,10 @@ class Tarjetas extends Component {
     }
 
     submit3 = () =>{
-        let edad = parseInt(document.querySelector(".inputEdad").value, 10);        
         
         let resultado3 = this.state.contactos.filter((dato) =>{
             console.log(dato.dob.age)
-            return dato.dob.age === edad;
+            return dato.dob.age ===  parseInt(this.state.edad, 10);        
         })
         this.setState({
             contactos: resultado3
@@ -117,22 +114,13 @@ class Tarjetas extends Component {
                     <li>
                         <div className="uk-margin"> 
 
-                                {/* <input className="inputNombre" type="text" placeholder="Nombre"></input>
+                                <input onChange={(event) => this.setState({nombre: event.target.value})} className="inputNombre" type="text" placeholder="Nombre"></input>
                                 <button className="uk-button uk-button-default uk-button-small" onClick={this.submit.bind(this)}><a uk-icon="icon: search"></a></button>
                                 
-                                <input className="inputApellido" type="text" placeholder="Apellido"></input>
+                                <input onChange={(event) => this.setState({apellido: event.target.value})} className="inputApellido" type="text" placeholder="Apellido"></input>
                                 <button className="uk-button uk-button-default uk-button-small" onClick={this.submit2.bind(this)}><a uk-icon="icon: search"></a></button>
                                 
-                                <input className="inputEdad" type="number" placeholder="Edad"></input>
-                                <button className="uk-button uk-button-default uk-button-small" onClick={this.submit3.bind(this)}><a uk-icon="icon: search"></a></button> */}
-
-                                <input onChange={(event) => this.setState({nombre: event.target.value})} className="inputNombre" type="text" placeholder="Nombre"></input>
-                                <button className="uk-button uk-button-default uk-button-small" onClick={this.submit.bind(this)}><a uk-icon="icon: search"></a></button> */}
-                                
-                                <input className="inputApellido" type="text" placeholder="Apellido"></input>
-                                <button className="uk-button uk-button-default uk-button-small" onClick={this.submit2.bind(this)}><a uk-icon="icon: search"></a></button>
-                                
-                                <input className="inputEdad" type="number" placeholder="Edad"></input>
+                                <input onChange={(event) => this.setState({edad: event.target.value})} className="inputEdad" type="number" placeholder="Edad"></input>
                                 <button className="uk-button uk-button-default uk-button-small" onClick={this.submit3.bind(this)}><a uk-icon="icon: search"></a></button>
                                 
                         </div>
