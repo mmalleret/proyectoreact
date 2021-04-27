@@ -58,8 +58,10 @@ class Tarjeta extends Component {
                             <div className="uk-card-media-top">
                                 <img src={this.props.foto} alt=""/>
                             </div>
-                            <li>{this.props.nombre} {this.props.apellido}</li>
-                            <li>{this.props.fecha} ({this.props.edad})</li>
+                            <li>{this.props.nombre} {this.props.apellido} ({this.props.edad})</li>
+                            
+                            <li onClick= {() => this.s}>{this.props.fecha}</li>
+                        {/* < DatePicker selected={this.state.selectedDate} onChange={ this.setSelectedDate } dateFormat='dd/MM/yyyy' filterDate={date => date.getDate()} isClearable showYearDropdown showFullMonthYearPicker/>  */}
                             <li>{this.props.mail}</li>
                             <ul className="uk-iconnav iconos-tarjeta">
                                 <li><a uk-icon="icon: arrow-left"></a></li>

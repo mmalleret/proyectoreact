@@ -3,7 +3,6 @@ import Container from './components/Container'
 import Navbar from './components/Navbar'
 import Imagen from './components/Imagen'
 
-
 function App() {
   return (
   <div id="wrapper">
@@ -11,7 +10,6 @@ function App() {
     
 
     {/* Imagen */}
-    
       <div className="uk-section-default"> 
         <Imagen/>
       </div>
@@ -23,9 +21,8 @@ function App() {
           <Navbar/>
         </div>
       </nav>
-    
+
       <Container/>
-  
 
      {/* Footer */}
     
