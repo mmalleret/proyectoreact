@@ -3,6 +3,10 @@
     padding: 15px;
 }
 
+.calendar {
+    background-color: #f8f8f8;
+}
+
 .iconos-tarjeta {
 margin: 10px 0px 0px;
 padding: 10px 0px 0px; 

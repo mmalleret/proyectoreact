@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import Tarjeta from './Tarjeta';
 
-
 class Tarjetas extends Component {
 
     constructor(props) {
@@ -9,8 +8,10 @@ class Tarjetas extends Component {
         this.state = {
             contactos: [],
             contactosOriginales: [],
+
         }
     }
+
 
     componentDidMount(){
         fetch("https://randomuser.me/api/?results=12")
@@ -30,10 +31,12 @@ class Tarjetas extends Component {
         })
     }
 
-    // mover = (posicion) => {
-
-
-    // }
+    mover = (posicion) => {
+        let lugar = this.state.contactos.findIndex((posicion) => {
+            console.log(posicion)
+        })
+        
+    }
 
     reset = () => {
         this.setState({
@@ -72,7 +75,7 @@ class Tarjetas extends Component {
 
         let resultado2 = this.state.contactos.filter((dato) =>{
             console.log(dato.name.last)
-            return dato.name.last == apellido;
+            return dato.name.last === apellido;
         })
         this.setState({
             contactos: resultado2
@@ -84,7 +87,7 @@ class Tarjetas extends Component {
         
         let resultado3 = this.state.contactos.filter((dato) =>{
             console.log(dato.dob.age)
-            return dato.dob.age == edad;
+            return dato.dob.age === edad;
         })
         this.setState({
             contactos: resultado3
@@ -125,9 +128,10 @@ class Tarjetas extends Component {
                     </li>
                 </ul>
 
-                <div className="uk-grid-column-small uk-grid-row-large uk-child-width-1-3@s uk-text-center container" uk-grid="true"> 
+                <div className="uk-grid-column-small uk-grid-row-large uk-child-width-1-3@s uk-text-center container" uk-grid="true" > 
                 {this.state.contactos.map( (item) => {
                         return (
+                            
                             <Tarjeta 
                             nombre={item.name.first} 
                             apellido={item.name.last} 
@@ -139,7 +143,7 @@ class Tarjetas extends Component {
                             color="white" 
                             key={item.login.uuid} 
                             onDelete={this.borrar.bind(this)}
-                            // onChange={this.posicion.bind(this)}
+                            onChange={this.mover.bind(this)}
                             direccion={item.location} 
                             registro={item.registered.date}
                             telefono={item.cell}
