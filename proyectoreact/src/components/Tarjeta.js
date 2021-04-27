@@ -61,6 +61,7 @@ class Tarjeta extends Component {
                             <li>{this.props.nombre} {this.props.apellido}</li>
                             <li>{this.props.fecha} ({this.props.edad})</li>
                             <li>{this.props.mail}</li>
+                            
                             <ul className="uk-iconnav iconos-tarjeta">
                                 <li><a uk-icon="icon: arrow-left"></a></li>
                                 <li onClick = { () => this.cambiarColor("#AFB8FB")}> <a uk-icon="icon: heart" ></a> </li>
