@@ -83,7 +83,7 @@ class Tarjetas extends Component {
     }
 
     submit3 = () =>{
-        let edad = document.querySelector(".inputEdad").value
+        let edad = parseInt(document.querySelector(".inputEdad").value, 10);        
         
         let resultado3 = this.state.contactos.filter((dato) =>{
             console.log(dato.dob.age)
