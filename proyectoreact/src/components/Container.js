@@ -110,10 +110,22 @@ class Tarjetas extends Component {
                     {/* filtros */}
                     <li>
                         <div className="uk-margin"> 
-                                <input className="inputNombre" type="text" placeholder="Nombre"></input>
+
+                                {/* <input className="inputNombre" type="text" placeholder="Nombre"></input>
                                 <button className="uk-button uk-button-default uk-button-small" onClick={this.submit.bind(this)}><a uk-icon="icon: search"></a></button>
+                                
                                 <input className="inputApellido" type="text" placeholder="Apellido"></input>
                                 <button className="uk-button uk-button-default uk-button-small" onClick={this.submit2.bind(this)}><a uk-icon="icon: search"></a></button>
+                                
+                                <input className="inputEdad" type="number" placeholder="Edad"></input>
+                                <button className="uk-button uk-button-default uk-button-small" onClick={this.submit3.bind(this)}><a uk-icon="icon: search"></a></button> */}
+
+                                <input onChange={(event) => this.setState({contactos: event.target.contactos})} className="inputNombre" type="text" placeholder="Nombre"></input>
+                                <button className="uk-button uk-button-default uk-button-small" onClick={this.submit.bind(this)}><a uk-icon="icon: search"></a></button> */}
+                                
+                                <input className="inputApellido" type="text" placeholder="Apellido"></input>
+                                <button className="uk-button uk-button-default uk-button-small" onClick={this.submit2.bind(this)}><a uk-icon="icon: search"></a></button>
+                                
                                 <input className="inputEdad" type="number" placeholder="Edad"></input>
                                 <button className="uk-button uk-button-default uk-button-small" onClick={this.submit3.bind(this)}><a uk-icon="icon: search"></a></button>
                                 
