@@ -70,7 +70,7 @@ class Tarjeta extends Component {
                             <li>{this.props.nombre} {this.props.apellido} ({this.props.edad})</li>
                             <li>{this.props.mail}</li>
                             <li>
-                                < DatePicker selected={this.state.selectedDate} onChange={ this.setSelectedDate } dateFormat='dd/MM/yyyy' filterDate={date => date.getDate()} showYearDropdown showFullMonthYearPicker/> 
+                                < DatePicker selected={this.state.selectedDate} onChange={ this.setSelectedDate } dateFormat='dd/MM/yyyy' filterDate={date => date.getDate()} showYearDropdown showFullMonthYearPicker style={{backgroundColor:"red"}}/> 
                             </li>
                             <ul className="uk-iconnav iconos-tarjeta">
                                 <li onClick = {this.props.onChange.bind(this, this.props.id)}><a uk-icon="icon: arrow-left"></a></li>
