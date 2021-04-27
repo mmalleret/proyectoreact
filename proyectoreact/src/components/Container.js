@@ -36,8 +36,14 @@ class Tarjetas extends Component {
             return objeto.login.uuid === posicion; 
         })
         
-        let final = this.state.contactos.splice(lugar, 1) 
-        console.log(final)
+        let eliminar  = this.state.contactos.splice(lugar, 1) 
+        
+        console.log(eliminar)
+
+        let nuevoLugar = lugar+1
+        
+        let agregar = this.state.contactos.splice(nuevoLugar, 0, eliminar)
+        
         this.setState({
             contactos: this.state.contactos
         })
@@ -136,7 +142,7 @@ class Tarjetas extends Component {
                 </ul>
 
                 <div className="uk-grid-column-small uk-grid-row-large uk-child-width-1-3@s uk-text-center container" uk-grid="true" > 
-                {this.state.contactos.map( (item) => {
+                {this.state.contactos.map((item) => {
                         return (
                             
                             <Tarjeta 
