@@ -62,7 +62,7 @@ class Tarjeta extends Component {
                             <li>{this.props.fecha} ({this.props.edad})</li>
                             <li>{this.props.mail}</li>
                             <ul className="uk-iconnav iconos-tarjeta">
-                                <li><a uk-icon="icon: arrow-left"></a></li>
+                                <li onClick = {this.props.onChange.bind(this, this.props.id)}><a uk-icon="icon: arrow-left"></a></li>
                                 <li onClick = { () => this.cambiarColor("#AFB8FB")}> <a uk-icon="icon: heart" ></a> </li>
                                 <li onClick = {this.props.onDelete.bind(this, this.props.id)}> <a uk-icon="icon: trash"></a> </li>
                                 <li onClick = { () => this.cambiarClase("block")}> <a onClick= {() => this.cambiarIcono("icon: minus-circle")} uk-icon={this.state.icon}></a> </li>
