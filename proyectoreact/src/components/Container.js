@@ -1,8 +1,5 @@
 import React, {Component} from 'react';
 import Tarjeta from './Tarjeta';
-import DatePicker from 'react-datepicker'
-import 'react-datepicker/dist/react-datepicker.css'
-
 
 class Tarjetas extends Component {
 
@@ -11,7 +8,6 @@ class Tarjetas extends Component {
         this.state = {
             contactos: [],
             contactosOriginales: [],
-            selectedDate: this.props.fecha
         }
     }
 
@@ -95,12 +91,6 @@ class Tarjetas extends Component {
         })
     }
 
-    setSelectedDate = (date) => {
-        this.setState({
-            selectedDate: date
-        })
-    }
-
     render () {
         return(
             <div className="container">
@@ -132,11 +122,6 @@ class Tarjetas extends Component {
                         <div className="reset uk-margin">
                             <button className="uk-button uk-button-default uk-button-small"><a href="" uk-icon="icon: refresh" onClick= {this.reset.bind(this)}></a></button>
                         </div>
-                    </li>
-
-                    {/* Datepicker */}
-                    <li className="Calendar">
-                        < DatePicker selected={this.state.selectedDate} onChange={ this.setSelectedDate } dateFormat='dd/MM/yyyy' filterDate={date => date.getDate()} isClearable showYearDropdown showFullMonthYearPicker/> 
                     </li>
                 </ul>
 

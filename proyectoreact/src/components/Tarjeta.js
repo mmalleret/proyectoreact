@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import DatePicker from 'react-datepicker'
+import 'react-datepicker/dist/react-datepicker.css'
 
 class Tarjeta extends Component {
 
@@ -7,7 +9,9 @@ class Tarjeta extends Component {
         this.state = {
             colorfondo: props.color,
             icon: "icon: plus-circle",
-            display: "none"
+            display: "none",
+            selectedDate: new Date()
+
         }
     }
 
@@ -46,6 +50,12 @@ class Tarjeta extends Component {
         }
     }
 
+    setSelectedDate = (date) => {
+        this.setState({
+            selectedDate: date
+        })
+    }
+
     render() {
         return(
             <div className="uk-card uk-card-default uk-card-body" style={{backgroundColor: this.state.colorfondo}}
@@ -60,8 +70,13 @@ class Tarjeta extends Component {
                             </div>
                             <li>{this.props.nombre} {this.props.apellido} ({this.props.edad})</li>
                             
-                            <li onClick= {() => this.s}>{this.props.fecha}</li>
-                        {/* < DatePicker selected={this.state.selectedDate} onChange={ this.setSelectedDate } dateFormat='dd/MM/yyyy' filterDate={date => date.getDate()} isClearable showYearDropdown showFullMonthYearPicker/>  */}
+                            <li className="uk-card-media-top Calendar" style={{backgroundColor: this.state.colorfondo}}
+                            onMouseEnter = { () => this.cambiarColor("#DED1E1")}
+                            onMouseLeave = { () => this.cambiarColor("white")}>
+                                < DatePicker selected={this.state.selectedDate} onChange={ this.setSelectedDate } dateFormat='dd/MM/yyyy' filterDate={date => date.getDate()} showYearDropdown showFullMonthYearPicker/> 
+                            </li>
+
+                            <li>{this.props.fecha}</li>
                             <li>{this.props.mail}</li>
                             <ul className="uk-iconnav iconos-tarjeta">
                                 <li><a uk-icon="icon: arrow-left"></a></li>
