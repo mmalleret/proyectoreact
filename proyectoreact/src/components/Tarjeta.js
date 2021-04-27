@@ -69,6 +69,7 @@ class Tarjeta extends Component {
                             </div>
                             <li>{this.props.nombre} {this.props.apellido} ({this.props.edad})</li>
                             <li>{this.props.mail}</li>
+                            
                             <li>
                                 < DatePicker selected={this.state.selectedDate} onChange={ this.setSelectedDate } dateFormat='dd/MM/yyyy' filterDate={date => date.getDate()} showYearDropdown showFullMonthYearPicker style={{backgroundColor:"red"}}/> 
                             </li>

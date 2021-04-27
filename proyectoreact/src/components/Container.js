@@ -32,9 +32,16 @@ class Tarjetas extends Component {
     }
 
     mover = (posicion) => {
-        let lugar = this.state.contactos.findIndex((posicion) => {
-            console.log(posicion)
+        let lugar = this.state.contactos.findIndex((objeto) => {
+            return objeto.login.uuid === posicion; 
         })
+        
+        let final = this.state.contactos.splice(lugar, 1) 
+        console.log(final)
+        this.setState({
+            contactos: this.state.contactos
+        })
+
         
     }
 
