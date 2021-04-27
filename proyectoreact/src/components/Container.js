@@ -8,6 +8,7 @@ class Tarjetas extends Component {
         this.state = {
             contactos: [],
             contactosOriginales: [],
+            value: ''
 
         }
     }
@@ -64,11 +65,9 @@ class Tarjetas extends Component {
     }
 
     submit = () => {
-        let nombre = document.querySelector(".inputNombre").value
-        
         let resultado = this.state.contactos.filter((dato) =>{
             console.log(dato.name.first)
-             return dato.name.first === nombre;
+             return dato.name.first === this.state.nombre;
          })
         
          this.setState({
@@ -127,7 +126,7 @@ class Tarjetas extends Component {
                                 <input className="inputEdad" type="number" placeholder="Edad"></input>
                                 <button className="uk-button uk-button-default uk-button-small" onClick={this.submit3.bind(this)}><a uk-icon="icon: search"></a></button> */}
 
-                                <input onChange={(event) => this.setState({contactos: event.target.contactos})} className="inputNombre" type="text" placeholder="Nombre"></input>
+                                <input onChange={(event) => this.setState({nombre: event.target.value})} className="inputNombre" type="text" placeholder="Nombre"></input>
                                 <button className="uk-button uk-button-default uk-button-small" onClick={this.submit.bind(this)}><a uk-icon="icon: search"></a></button> */}
                                 
                                 <input className="inputApellido" type="text" placeholder="Apellido"></input>
