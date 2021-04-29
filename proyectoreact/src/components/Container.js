@@ -111,6 +111,27 @@ class Tarjetas extends Component {
             contactos: resultado2
         })
     }
+    //submit = () => {
+        //let resultado = this.state.contactos.filter((dato) =>{
+            //console.log(dato.name.first)
+             //return dato.name.first === this.state.nombre;
+         //})
+        
+         //this.setState({
+           // contactos: resultado
+        //})
+
+    //}
+
+    //submit2 = () =>{
+        //let resultado2 = this.state.contactos.filter((dato) =>{
+            //console.log(dato.name.last)
+            //return dato.name.last === this.state.apellido;
+        //})
+        //this.setState({
+            //contactos: resultado2
+        //})
+    //}
 
     submit3 = () =>{
         
