@@ -10,7 +10,8 @@ class Tarjeta extends Component {
             colorfondo: props.color,
             icon: "icon: plus-circle",
             display: "none",
-            selectedDate: new Date(props.fecha)
+            selectedDate: new Date(props.fecha),
+            registeredDate: new Date(props.registro)
         }
     }
 
@@ -61,11 +62,6 @@ class Tarjeta extends Component {
         }
     }
 
-    //setSelectedDate = (date) => {
-      //  this.setState({
-      //      selectedDate: date
-      //  })
-    //}
 
     render() {
         return(
@@ -83,7 +79,7 @@ class Tarjeta extends Component {
                             <li>{this.props.mail}</li>
                             
                             <li>
-                                < DatePicker selected={this.state.selectedDate}  dateFormat='dd/MM/yyyy' filterDate={date => date.getDate()} showYearDropdown showFullMonthYearPicker style={{backgroundColor:"red"}}/> 
+                                Fecha de nacimiento: < DatePicker selected={this.state.selectedDate}  dateFormat='dd/MM/yyyy' filterDate={date => date.getDate()} showYearDropdown showFullMonthYearPicker style={{backgroundColor:"red"}}/> 
                             </li>
                             <ul className="uk-iconnav iconos-tarjeta">
                                 <li onClick = {this.props.onChangeLeft.bind(this, this.props.id)}><a uk-icon="icon: arrow-left"></a></li>
@@ -98,8 +94,8 @@ class Tarjeta extends Component {
                         <ul className="uk-list">
                             <li>{this.props.direccion.street.name} {this.props.direccion.street.number}</li>
                             <li>{this.props.direccion.city}, {this.props.direccion.state}, {this.props.direccion.country}</li>
-                            <li>{this.props.registro}</li>
-                            <li>{this.props.telefono}</li>
+                            <li>Fecha de registro: < DatePicker selected={this.state.registeredDate}  dateFormat='dd/MM/yyyy' filterDate={date => date.getDate()} showYearDropdown showFullMonthYearPicker style={{backgroundColor:"red"}}/> </li>
+                            <li>Número de telefono: {this.props.telefono}</li>
                         </ul>
                     </div>
                     
