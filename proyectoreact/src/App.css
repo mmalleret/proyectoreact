@@ -19,19 +19,17 @@ input {
     line-height: 28px;
     font-size: .875rem;
 }
-/* #global{
-    height: 300px;
-	width: 200px;
+#global{
 	background: #f1f1f1;
-	overflow-y: scroll;
-} */
-/* #mensajes{
+	overflow-x: scroll;
+}
+#mensajes{
     height: auto;
 }
 .texto{
     padding:4px;
 	background:#fff;
-} */
+} 
 footer {
         padding: 15px 30px;
         border-bottom: 1px solid #dadce0;

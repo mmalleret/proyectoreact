@@ -69,7 +69,7 @@ class Tarjeta extends Component {
 
     render() {
         return(
-            <div className="uk-card uk-card-default uk-card-body"  style={{backgroundColor: this.state.colorfondo}}
+            <div className="texto"  style={{backgroundColor: this.state.colorfondo}}
             onMouseEnter = { () => this.cambiarColor("#DED1E1")}
             onMouseLeave = { () => this.cambiarColor("white")}
             >
