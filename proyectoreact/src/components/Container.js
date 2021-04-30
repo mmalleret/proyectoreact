@@ -8,7 +8,8 @@ class Tarjetas extends Component {
         this.state = {
             contactos: [],
             contactosOriginales: [],
-            value: ''
+            value: '',
+            vista: ''
 
         }
     }
@@ -110,10 +111,67 @@ class Tarjetas extends Component {
 
     }
 
+<<<<<<< HEAD
+=======
+//PARA BUSCAR CON UN BOTON PARA CADA UNO DE LOS INPUTS
+
+    //submit = () => {
+    //  let resultado = this.state.contactos.filter((dato) =>{
+    //      console.log(dato.name.first)
+    //      return dato.name.first === this.state.nombre;
+    //  })
+        
+    //  this.setState({
+    //      contactos: resultado
+    //  })
+    //}
+
+    // submit2 = () =>{
+    //     let resultado2 = this.state.contactos.filter((dato) =>{
+    //         console.log(dato.name.last)
+    //         return dato.name.last === this.state.apellido;
+    //     })
+    //     this.setState({
+    //         contactos: resultado2
+    //     })
+    // }
+
+    // submit3 = () =>{
+    //     let resultado3 = this.state.contactos.filter((dato) =>{
+    //         console.log(dato.dob.age)
+    //         return dato.dob.age ===  parseInt(this.state.edad, 10);        
+    //     })
+    //     this.setState({
+    //         contactos: resultado3
+    //     })
+    // }
+>>>>>>> e26fd735d304327d8edcfd19d057c9457d88e2a6
+
+    //cambiarid = () => {
+
+       //let div = document.getElementsByClassName('mensajes');
+
+        //if (this.state.vista === 'global' ) {
+            
+            
+           // div.classList.add('uk-grid-column-small uk-grid-row-large uk-child-width-1-3@s uk-text-center container')
+        
+        //this.setState({
+            //vista: '',
+
+        //})
+        //} else {
+
+            //div.classList.remove('uk-grid-column-small uk-grid-row-large uk-child-width-1-3@s uk-text-center container')
+        
+           // this.setState({
+            //vista: 'global'
+        //})
+    //}}
 
     render () {
         return(
-            <div className="container">
+            <div className="container" >
                 <ul class="uk-iconnav eventos-container">
 
                     {/* adicionar tarjetas */}
@@ -142,9 +200,19 @@ class Tarjetas extends Component {
                             <button className="uk-button uk-button-default uk-button-small"><a href="" uk-icon="icon: refresh" onClick= {this.reset.bind(this)}></a></button>
                         </div>
                     </li>
+                    
+                    {/* boton de cambiar horizontal a vertical */}
+                    <li>
+                        <div className="reset uk-margin">
+                            <button className="uk-button uk-button-default uk-button-small"><a href="" uk-icon="icon: desktop"></a></button>
+                            {/* Acá va el botón que llama al método cambiarId */}
+                        </div>
+                    </li>
+                    
                 </ul>
 
-                <div className="uk-grid-column-small uk-grid-row-large uk-child-width-1-3@s uk-text-center container" uk-grid="true" > 
+                <div id={this.state.vista}>
+                <div className="uk-grid-column-small uk-grid-row-large uk-child-width-1-3@s uk-text-center container mensajes" uk-grid="true" id="mensajes"> 
                 {this.state.contactos.map((item) => {
                         return (
                             
@@ -170,6 +238,7 @@ class Tarjetas extends Component {
                     })
                 }
                 </div>
+              </div>
             </div>
         )}
 }
