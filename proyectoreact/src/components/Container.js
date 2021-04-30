@@ -111,42 +111,7 @@ class Tarjetas extends Component {
 
     }
 
-<<<<<<< HEAD
-=======
-//PARA BUSCAR CON UN BOTON PARA CADA UNO DE LOS INPUTS
-
-    //submit = () => {
-    //  let resultado = this.state.contactos.filter((dato) =>{
-    //      console.log(dato.name.first)
-    //      return dato.name.first === this.state.nombre;
-    //  })
-        
-    //  this.setState({
-    //      contactos: resultado
-    //  })
-    //}
-
-    // submit2 = () =>{
-    //     let resultado2 = this.state.contactos.filter((dato) =>{
-    //         console.log(dato.name.last)
-    //         return dato.name.last === this.state.apellido;
-    //     })
-    //     this.setState({
-    //         contactos: resultado2
-    //     })
-    // }
-
-    // submit3 = () =>{
-    //     let resultado3 = this.state.contactos.filter((dato) =>{
-    //         console.log(dato.dob.age)
-    //         return dato.dob.age ===  parseInt(this.state.edad, 10);        
-    //     })
-    //     this.setState({
-    //         contactos: resultado3
-    //     })
-    // }
->>>>>>> e26fd735d304327d8edcfd19d057c9457d88e2a6
-
+//  ESTE MÉTODO NO FUNCIONA, LO AGREGAMOS PORQUE NOS ESTA FALTANDO UN DETALLE
     cambiarid = () => {
 
        let div = document.getElementsByClassName('mensajes');
