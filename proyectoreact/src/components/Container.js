@@ -147,27 +147,27 @@ class Tarjetas extends Component {
     // }
 >>>>>>> e26fd735d304327d8edcfd19d057c9457d88e2a6
 
-    //cambiarid = () => {
+    cambiarid = () => {
 
-       //let div = document.getElementsByClassName('mensajes');
+       let div = document.getElementsByClassName('mensajes');
 
-        //if (this.state.vista === 'global' ) {
+        if (this.state.vista !== 'global' ) {
             
             
-           // div.classList.add('uk-grid-column-small uk-grid-row-large uk-child-width-1-3@s uk-text-center container')
+           div.classList.addClass('uk-grid-column-small uk-grid-row-large uk-child-width-1-3@s uk-text-center container')
         
-        //this.setState({
-            //vista: '',
+        this.setState({
+            vista: '',
 
-        //})
-        //} else {
+        })
+        } else {
 
-            //div.classList.remove('uk-grid-column-small uk-grid-row-large uk-child-width-1-3@s uk-text-center container')
+            div.classList.removeClass('uk-grid-column-small uk-grid-row-large uk-child-width-1-3@s uk-text-center container')
         
-           // this.setState({
-            //vista: 'global'
-        //})
-    //}}
+           this.setState({
+            vista: 'global'
+        })
+    }}
 
     render () {
         return(
@@ -204,7 +204,7 @@ class Tarjetas extends Component {
                     {/* boton de cambiar horizontal a vertical */}
                     <li>
                         <div className="reset uk-margin">
-                            <button className="uk-button uk-button-default uk-button-small"><a href="" uk-icon="icon: desktop"></a></button>
+                            <button className="uk-button uk-button-default uk-button-small"><a href="" uk-icon="icon: desktop" onClick={() => this.cambiarid.bind('global')}></a></button>
                             {/* Acá va el botón que llama al método cambiarId */}
                         </div>
                     </li>
