@@ -91,10 +91,18 @@ class Tarjetas extends Component {
         })
     }
 
+// COMBINACIONES FILTER nombre apellido edad - nombre apellido - nombre edad - apellido edad - nombre - apellido - edad -  
+
     submit = () => {
         let resultado = this.state.contactos.filter((dato) =>{
             console.log(dato.name.first)
-             return dato.name.first === this.state.nombre;
+             return (dato.name.first === this.state.nombre && dato.name.last === this.state.apellido) && dato.dob.age ===  parseInt(this.state.edad, 10) || 
+             (dato.name.first === this.state.nombre && dato.name.last === this.state.apellido) || 
+             (dato.name.first === this.state.nombre && dato.dob.age ===  parseInt(this.state.edad, 10)) ||
+             (dato.name.last === this.state.apellido && dato.dob.age ===  parseInt(this.state.edad, 10)) ||
+             (dato.name.first === this.state.nombre) || 
+             (dato.name.last === this.state.apellido) || 
+             (dato.dob.age ===  parseInt(this.state.edad, 10)) ;
          })
         
          this.setState({
@@ -103,47 +111,36 @@ class Tarjetas extends Component {
 
     }
 
-    submit2 = () =>{
-        let resultado2 = this.state.contactos.filter((dato) =>{
-            console.log(dato.name.last)
-            return dato.name.last === this.state.apellido;
-        })
-        this.setState({
-            contactos: resultado2
-        })
-    }
     //submit = () => {
-        //let resultado = this.state.contactos.filter((dato) =>{
-            //console.log(dato.name.first)
-             //return dato.name.first === this.state.nombre;
-         //})
+    //  let resultado = this.state.contactos.filter((dato) =>{
+    //      console.log(dato.name.first)
+    //      return dato.name.first === this.state.nombre;
+    //  })
         
-         //this.setState({
-           // contactos: resultado
-        //})
-
+    //  this.setState({
+    //      contactos: resultado
+    //  })
     //}
 
-    //submit2 = () =>{
-        //let resultado2 = this.state.contactos.filter((dato) =>{
-            //console.log(dato.name.last)
-            //return dato.name.last === this.state.apellido;
-        //})
-        //this.setState({
-            //contactos: resultado2
-        //})
-    //}
+    // submit2 = () =>{
+    //     let resultado2 = this.state.contactos.filter((dato) =>{
+    //         console.log(dato.name.last)
+    //         return dato.name.last === this.state.apellido;
+    //     })
+    //     this.setState({
+    //         contactos: resultado2
+    //     })
+    // }
 
-    submit3 = () =>{
-        
-        let resultado3 = this.state.contactos.filter((dato) =>{
-            console.log(dato.dob.age)
-            return dato.dob.age ===  parseInt(this.state.edad, 10);        
-        })
-        this.setState({
-            contactos: resultado3
-        })
-    }
+    // submit3 = () =>{
+    //     let resultado3 = this.state.contactos.filter((dato) =>{
+    //         console.log(dato.dob.age)
+    //         return dato.dob.age ===  parseInt(this.state.edad, 10);        
+    //     })
+    //     this.setState({
+    //         contactos: resultado3
+    //     })
+    // }
 
     cambiarid = () => {
         if (this.state.vista === 'horizontal' ) {
@@ -174,13 +171,9 @@ class Tarjetas extends Component {
                         <div className="uk-margin"> 
 
                                 <input onChange={(event) => this.setState({nombre: event.target.value})} className="inputNombre" type="text" placeholder="Nombre"></input>
-                                <button className="uk-button uk-button-default uk-button-small" onClick={this.submit.bind(this)}><a uk-icon="icon: search"></a></button>
-                                
                                 <input onChange={(event) => this.setState({apellido: event.target.value})} className="inputApellido" type="text" placeholder="Apellido"></input>
-                                <button className="uk-button uk-button-default uk-button-small" onClick={this.submit2.bind(this)}><a uk-icon="icon: search"></a></button>
-                                
                                 <input onChange={(event) => this.setState({edad: event.target.value})} className="inputEdad" type="number" placeholder="Edad"></input>
-                                <button className="uk-button uk-button-default uk-button-small" onClick={this.submit3.bind(this)}><a uk-icon="icon: search"></a></button>
+                                <button className="uk-button uk-button-default uk-button-small" onClick={this.submit.bind(this)}><a uk-icon="icon: search"></a></button>
                                 
                         </div>
                     </li>
