@@ -8,7 +8,8 @@ class Tarjetas extends Component {
         this.state = {
             contactos: [],
             contactosOriginales: [],
-            value: ''
+            value: '',
+            vista: "vertical"
 
         }
     }
@@ -144,9 +145,20 @@ class Tarjetas extends Component {
         })
     }
 
+    cambiarid = () => {
+        if (this.state.vista === 'horizontal' ) {
+        this.setState({
+            vista: 'vertical',
+        })
+        } else {
+        this.setState({
+            vista: 'horizontal'
+        })
+    }}
+
     render () {
         return(
-            <div className="container">
+            <div className="container" >
                 <ul class="uk-iconnav eventos-container">
 
                     {/* adicionar tarjetas */}
@@ -179,9 +191,18 @@ class Tarjetas extends Component {
                             <button className="uk-button uk-button-default uk-button-small"><a href="" uk-icon="icon: refresh" onClick= {this.reset.bind(this)}></a></button>
                         </div>
                     </li>
+                    
+                    {/* boton de cambiar horizontal a vertical */}
+                    <li>
+                        <div className="reset uk-margin">
+                            <button className="uk-button uk-button-default uk-button-small"><a href="" uk-icon="icon: desktop" onClick= {() => this.cambiarid("horizontal")}></a></button>
+                        </div>
+                    </li>
+                    
                 </ul>
-
-                <div className="uk-grid-column-small uk-grid-row-large uk-child-width-1-3@s uk-text-center container" uk-grid="true" > 
+                
+                <div>
+                <div className="uk-grid-column-small uk-grid-row-large uk-child-width-1-3@s uk-text-center container" uk-grid="true"> 
                 {this.state.contactos.map((item) => {
                         return (
                             
@@ -207,6 +228,7 @@ class Tarjetas extends Component {
                     })
                 }
                 </div>
+              </div>
             </div>
         )}
 }

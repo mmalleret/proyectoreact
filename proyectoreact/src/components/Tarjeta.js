@@ -21,7 +21,19 @@ class Tarjeta extends Component {
             })
         } else {
             this.setState({
-                colorfondo: '#AFB8FB'
+                colorfondo: "#AFB8FB"
+            })
+        }
+    }
+    
+    favoritos = (color) => {
+        if (this.state.colorfondo !== '#AFB8FB') {
+            this.setState({
+                colorfondo: color,
+            })
+        } else {
+            this.setState({
+                colorfondo: "white"
             })
         }
     }
@@ -49,15 +61,15 @@ class Tarjeta extends Component {
         }
     }
 
-    setSelectedDate = (date) => {
-        this.setState({
-            selectedDate: date
-        })
-    }
+    //setSelectedDate = (date) => {
+      //  this.setState({
+      //      selectedDate: date
+      //  })
+    //}
 
     render() {
         return(
-            <div className="uk-card uk-card-default uk-card-body" style={{backgroundColor: this.state.colorfondo}}
+            <div className="uk-card uk-card-default uk-card-body"  style={{backgroundColor: this.state.colorfondo}}
             onMouseEnter = { () => this.cambiarColor("#DED1E1")}
             onMouseLeave = { () => this.cambiarColor("white")}
             >
@@ -71,11 +83,11 @@ class Tarjeta extends Component {
                             <li>{this.props.mail}</li>
                             
                             <li>
-                                < DatePicker selected={this.state.selectedDate} onChange={ this.setSelectedDate } dateFormat='dd/MM/yyyy' filterDate={date => date.getDate()} showYearDropdown showFullMonthYearPicker style={{backgroundColor:"red"}}/> 
+                                < DatePicker selected={this.state.selectedDate}  dateFormat='dd/MM/yyyy' filterDate={date => date.getDate()} showYearDropdown showFullMonthYearPicker style={{backgroundColor:"red"}}/> 
                             </li>
                             <ul className="uk-iconnav iconos-tarjeta">
                                 <li onClick = {this.props.onChangeLeft.bind(this, this.props.id)}><a uk-icon="icon: arrow-left"></a></li>
-                                <li onClick = { () => this.cambiarColor("#AFB8FB")}> <a uk-icon="icon: heart" ></a> </li>
+                                <li onClick = { () => this.favoritos("#AFB8FB")}> <a uk-icon="icon: heart" ></a> </li>
                                 <li onClick = {this.props.onDelete.bind(this, this.props.id)}> <a uk-icon="icon: trash"></a> </li>
                                 <li onClick = { () => this.cambiarClase("block")}> <a onClick= {() => this.cambiarIcono("icon: minus-circle")} uk-icon={this.state.icon}></a> </li>
                                 <li onClick = {this.props.onChangeRight.bind(this, this.props.id)}><a uk-icon="icon: arrow-right"></a></li>
