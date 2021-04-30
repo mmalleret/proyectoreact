@@ -110,36 +110,6 @@ class Tarjetas extends Component {
 
     }
 
-    //submit = () => {
-    //  let resultado = this.state.contactos.filter((dato) =>{
-    //      console.log(dato.name.first)
-    //      return dato.name.first === this.state.nombre;
-    //  })
-        
-    //  this.setState({
-    //      contactos: resultado
-    //  })
-    //}
-
-    // submit2 = () =>{
-    //     let resultado2 = this.state.contactos.filter((dato) =>{
-    //         console.log(dato.name.last)
-    //         return dato.name.last === this.state.apellido;
-    //     })
-    //     this.setState({
-    //         contactos: resultado2
-    //     })
-    // }
-
-    // submit3 = () =>{
-    //     let resultado3 = this.state.contactos.filter((dato) =>{
-    //         console.log(dato.dob.age)
-    //         return dato.dob.age ===  parseInt(this.state.edad, 10);        
-    //     })
-    //     this.setState({
-    //         contactos: resultado3
-    //     })
-    // }
 
     render () {
         return(
