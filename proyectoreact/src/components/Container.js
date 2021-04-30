@@ -93,7 +93,7 @@ class Tarjetas extends Component {
     submit = () => {
         let resultado = this.state.contactos.filter((dato) =>{
             console.log(dato.name.first)
-             return dato.name.first === this.state.nombre;
+             return dato.name.first === this.state.nombre && dato.name.last === this.state.apellido;
          })
         
          this.setState({
@@ -102,15 +102,16 @@ class Tarjetas extends Component {
 
     }
 
-    submit2 = () =>{
-        let resultado2 = this.state.contactos.filter((dato) =>{
-            console.log(dato.name.last)
-            return dato.name.last === this.state.apellido;
-        })
-        this.setState({
-            contactos: resultado2
-        })
-    }
+    // submit2 = () =>{
+    //     let resultado2 = this.state.contactos.filter((dato) =>{
+    //         console.log(dato.name.last)
+    //         return dato.name.last === this.state.apellido;
+    //     })
+    //     this.setState({
+    //         contactos: resultado2
+    //     })
+    // }
+
     //submit = () => {
         //let resultado = this.state.contactos.filter((dato) =>{
             //console.log(dato.name.first)
@@ -162,10 +163,9 @@ class Tarjetas extends Component {
                         <div className="uk-margin"> 
 
                                 <input onChange={(event) => this.setState({nombre: event.target.value})} className="inputNombre" type="text" placeholder="Nombre"></input>
+                                <input onChange={(event) => this.setState({apellido: event.target.value})} className="inputApellido" type="text" placeholder="Apellido"></input>
                                 <button className="uk-button uk-button-default uk-button-small" onClick={this.submit.bind(this)}><a uk-icon="icon: search"></a></button>
                                 
-                                <input onChange={(event) => this.setState({apellido: event.target.value})} className="inputApellido" type="text" placeholder="Apellido"></input>
-                                <button className="uk-button uk-button-default uk-button-small" onClick={this.submit2.bind(this)}><a uk-icon="icon: search"></a></button>
                                 
                                 <input onChange={(event) => this.setState({edad: event.target.value})} className="inputEdad" type="number" placeholder="Edad"></input>
                                 <button className="uk-button uk-button-default uk-button-small" onClick={this.submit3.bind(this)}><a uk-icon="icon: search"></a></button>
