@@ -156,7 +156,7 @@ class Tarjetas extends Component {
                                 <input className="inputAdd" type="number" ></input>
                                 <button className="uk-button uk-button-default uk-button-small" onClick={this.agregar.bind(this)}>Agregar</button>
                         </div> 
-                    </li>
+                    </li>C
 
                     {/* filtros */}
                     <li>
