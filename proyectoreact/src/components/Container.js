@@ -93,7 +93,7 @@ class Tarjetas extends Component {
     submit = () => {
         let resultado = this.state.contactos.filter((dato) =>{
             console.log(dato.name.first)
-             return dato.name.first === this.state.nombre && dato.name.last === this.state.apellido;
+             return (dato.name.first === this.state.nombre && dato.name.last === this.state.apellido) || (dato.name.first === this.state.nombre) || (dato.name.last === this.state.apellido) ;
          })
         
          this.setState({
@@ -156,7 +156,7 @@ class Tarjetas extends Component {
                                 <input className="inputAdd" type="number" ></input>
                                 <button className="uk-button uk-button-default uk-button-small" onClick={this.agregar.bind(this)}>Agregar</button>
                         </div> 
-                    </li>C
+                    </li>
 
                     {/* filtros */}
                     <li>
